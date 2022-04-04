@@ -1,59 +1,34 @@
 package com.cg.shopping.entities;
 
-import java.time.LocalDate;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
- @Entity
- @Table(name="employee")
- 
-public class Employee {
-	 
-	 @Id
-	 @Column(name="id")
-private long id;
-	 
-	 @Column(name="name")
-private String name;
-	 
-	 @Column(name="dob")
-private LocalDate dob;
-	 
-	 @Column(name="salary")
-private float salary;
-	 
-	 @Column(name="address")
-private String address;
-	 
-	 @Column(name="designation")
-private String designation;
-	 
-	 @Column(name="shop")
-private Shop shop;
+@Entity
+@Table(name="employee")
+public class Employee extends Shop
+{
+	@Id
+	
+    private int id;
+    private String name;
+    private String dob;
+    private float salary;
+    private String address;
+    private String designation;
+    private Shop shop_id;
+    
+   
+    
 
-	public Employee(long id, String name, LocalDate dob, float salary, String address, String designation, Shop shop) {
-		
-		this.id = id;
-		this.name = name;
-		this.dob = dob;
-		this.salary = salary;
-		this.address = address;
-		this.designation = designation;
-		this.shop = shop;
-	}
-
-	public Employee() {
-		
-	}
-
-	public long getId() {
+    
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -65,28 +40,12 @@ private Shop shop;
 		this.name = name;
 	}
 
-	public LocalDate getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
-
 	public float getSalary() {
 		return salary;
 	}
 
 	public void setSalary(float salary) {
 		this.salary = salary;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
 	}
 
 	public String getDesignation() {
@@ -97,12 +56,31 @@ private Shop shop;
 		this.designation = designation;
 	}
 
-	public Shop getShop() {
-		return shop;
+	public Shop getShop_id() {
+		return shop_id;
 	}
 
-	public void setShop(Shop shop) {
-		this.shop = shop;
+	public void setShop_id(Shop shop_id) {
+		this.shop_id = shop_id;
 	}
-	 
+
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+    
+    
+    
 }

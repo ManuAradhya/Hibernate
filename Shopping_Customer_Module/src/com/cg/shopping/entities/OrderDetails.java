@@ -1,5 +1,4 @@
 package com.cg.shopping.entities;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -7,6 +6,8 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="order_details")
@@ -28,12 +29,13 @@ public class OrderDetails implements Serializable
 	
 	
 	private enum paymentMode{ CARD , CASH , UPI , ONLINEBANKING};
-             
-	@Column(name="customer")
-	private Customer customer;
+     
+	@ManyToOne
+	@JoinColumn(name="customer_id")
+	private Customer customer_id;
 	
 	@Column(name="shop")
-     private Shop shop;
+     private Shop shop_id;
 
 	public int getId() {
 		return id;
@@ -68,19 +70,19 @@ public class OrderDetails implements Serializable
 	}
 
 	public Customer getCustomer() {
-		return this.customer;
+		return this.customer_id;
 	}
 
 	public void setCustomer(Customer customer) {
-		this.customer = customer;
+		this.customer_id = customer;
 	}
 
 	public Shop getShop() {
-		return this.shop;
+		return this.shop_id;
 	}
 
 	public void setShop(Shop shop) {
-		this.shop = shop;
+		this.shop_id = shop;
 	}
 
 	public static long getSerialversionuid() {
