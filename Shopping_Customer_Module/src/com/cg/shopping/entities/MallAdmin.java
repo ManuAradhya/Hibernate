@@ -1,8 +1,8 @@
 package com.cg.shopping.entities;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
 import javax.persistence.Table;
 
 @Entity
@@ -10,18 +10,19 @@ import javax.persistence.Table;
 public class MallAdmin {
 	@Id
 	@Column(name="id")
-	private long id;
+private long id;
 	
 	@Column(name="name")
-	private String name;
+private String name;
 	
 	@Column(name="password")
-	private String password;
+private String password;
 	
-	
+	@Column(name="mall")
+private Mall mall;
 	
 	@Column(name="phone")
-	private long phone;
+private long phone;
 
 	public long getId() {
 		return id;

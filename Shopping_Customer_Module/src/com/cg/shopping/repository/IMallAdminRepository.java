@@ -2,7 +2,7 @@ package com.cg.shopping.repository;
 
 import com.cg.shopping.entities.MallAdmin;
 
-public class IMallAdminRepository {
+public interface IMallAdminRepository {
 	public MallAdmin addMallAdmin(MallAdmin mallAdmin);
 	public MallAdmin updateMallAdmin(MallAdmin mallAdmin);
 	public MallAdmin deleteMallAdmin(long id);

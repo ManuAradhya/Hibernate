@@ -70,6 +70,11 @@ private String password;
 		this.password = password;
 	}
 
+	public void setMallAdmin(MallAdmin mallAdmin) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	/*public Customer getCust_id() {
 		return cust_id;
 	}

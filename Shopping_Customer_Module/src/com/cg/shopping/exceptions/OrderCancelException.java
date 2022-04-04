@@ -1,5 +1,7 @@
 package com.cg.shopping.exceptions;
 
-public class OrderCancelException {
+
+@SuppressWarnings("serial")
+public class OrderCancelException extends Exception {
 
 }
